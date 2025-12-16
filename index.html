@@ -122,7 +122,11 @@
     </div>
 
     <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:50px;margin-top:50px">
-      <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@adolfo_poncitlan/video/7445729188515958022" data-video-id="7445729188515958022" style="max-width:325px"></blockquote>
+      <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@adolfo_poncitlan/video/7445729188515958022" data-video-id="7445729188515958022" style="max-width:325px;min-width:280px;">
+  <section>
+    <a target="_blank" href="https://www.tiktok.com/@adolfo_poncitlan">@adolfo_poncitlan</a>
+  </section>
+</blockquote>
       <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DSOKiuxieRz/" data-instgrm-version="14"></blockquote>
     </div>
   </div>
@@ -167,7 +171,14 @@
   });
 </script>
 
-<script src="https://www.tiktok.com/embed.js"></script>
+<script async src="https://www.tiktok.com/embed.js"></script>
+<script>
+  window.addEventListener('load', () => {
+    if (window.tiktokEmbed) {
+      window.tiktokEmbed.load();
+    }
+  });
+</script>
 <script src="https://www.instagram.com/embed.js"></script>
 <script>
   window.addEventListener('load',()=>{
