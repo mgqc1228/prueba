@@ -166,6 +166,19 @@
   </div>
 </section>
 
+<!-- QUIZ INTERACTIVO -->
+<section class="fade" id="quiz">
+  <h2>🎓 Quiz ALM & iSpeak</h2>
+  <div class="divider"></div>
+
+  <div id="quiz-box" style="max-width:600px;margin:40px auto;background:#ffffff;color:#b10000;padding:30px;border-radius:20px;box-shadow:0 10px 25px rgba(0,0,0,.3)">
+    <h3 id="question"></h3>
+    <div id="answers" style="margin-top:20px;display:grid;gap:15px"></div>
+    <p id="result" style="margin-top:20px;font-weight:bold"></p>
+    <button id="nextBtn" style="display:none;margin-top:20px;padding:12px 25px;border:none;border-radius:30px;background:#b10000;color:#fff;font-size:1rem;cursor:pointer">Siguiente</button>
+  </div>
+</section>
+
 <footer>© 2025 Secundaria Adolfo López Mateos · Poncitlán, Jalisco</footer>
 
 <script>
@@ -197,6 +210,97 @@
   window.addEventListener('load',()=>{
     if(window.instgrm){ instgrm.Embeds.process(); }
   });
+</script>
+
+<script>
+const quizData = [
+  {
+    question: "¿Cuántos años tiene la sede principal?",
+    answers: ["50", "69", "75"],
+    correct: 1
+  },
+  {
+    question: "¿Quién fue el fundador de la escuela?",
+    answers: ["Mtro. Jaime Rivera Varela", "Benito Juárez", "José Vasconcelos"],
+    correct: 0
+  },
+  {
+    question: "¿Qué celebridades han visitado la escuela?",
+    answers: ["Hugo Sánchez, Samantha Bricio, Izmael Íñiguez", "Luis Miguel, Bad Bunny", "Ninguna"],
+    correct: 0
+  },
+  {
+    question: "¿Qué día se fundó la escuela?",
+    answers: ["15 de septiembre", "27 de octubre", "20 de noviembre"],
+    correct: 1
+  },
+  {
+    question: "¿Cuántas veces ha ganado la escolta de la Adolfo?",
+    answers: ["3 veces", "5 veces", "10 veces"],
+    correct: 1
+  },
+  {
+    question: "¿Cuántas veces han quedado campeones de fútbol?",
+    answers: ["2", "5", "+10"],
+    correct: 2
+  },
+  {
+    question: "¿Cuáles son los colores característicos de la escuela?",
+    answers: ["Rojo y blanco", "Rojo y negro", "Azul y verde"],
+    correct: 0
+  },
+  {
+    question: "¿Cuál es la mascota de la escuela?",
+    answers: ["Lizzy", "Doqui", "Un águila"],
+    correct: 0
+  }
+];
+
+let current = 0;
+
+const qEl = document.getElementById('question');
+const aEl = document.getElementById('answers');
+const rEl = document.getElementById('result');
+const nextBtn = document.getElementById('nextBtn');
+
+function loadQuiz(){
+  rEl.textContent = "";
+  nextBtn.style.display = "none";
+  const q = quizData[current];
+  qEl.textContent = q.question;
+  aEl.innerHTML = "";
+
+  q.answers.forEach((ans, i) => {
+    const btn = document.createElement('button');
+    btn.textContent = ans;
+    btn.style.padding = "12px";
+    btn.style.borderRadius = "25px";
+    btn.style.border = "2px solid #b10000";
+    btn.style.background = "transparent";
+    btn.style.cursor = "pointer";
+    btn.onclick = () => checkAnswer(i);
+    aEl.appendChild(btn);
+  });
+}
+
+function checkAnswer(i){
+  const correct = quizData[current].correct;
+  rEl.textContent = i === correct ? "✅ Correcto" : "❌ Incorrecto";
+  nextBtn.style.display = "inline-block";
+}
+
+nextBtn.onclick = () => {
+  current++;
+  if(current < quizData.length){
+    loadQuiz();
+  } else {
+    qEl.textContent = "🎉 ¡Quiz completado!";
+    aEl.innerHTML = "Gracias por participar";
+    nextBtn.style.display = "none";
+  }
+}
+
+loadQuiz();
 </script>
 
 </body>
