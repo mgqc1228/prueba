@@ -163,6 +163,22 @@
   </div>
 </section>
 <footer>© 2025 Secundaria Adolfo López Mateos · Poncitlán, Jalisco</footer>
+
+<!-- CHATBOT TAWK.TO INTEGRADO -->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/694f9471833366197d82be20/1jdfdnmru';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const items = document.querySelectorAll('.fade');
@@ -218,7 +234,7 @@ const quizData = [
   },
   {
     question: "¿Cuál es uno de los pilares educativos de la escuela?",
-    answers: ["Solo deporte", "Ciencia, discipline, deporte y valores", "Solo inglés"],
+    answers: ["Solo deporte", "Ciencia, disciplina, deporte y valores", "Solo inglés"],
     correct: 1
   },
   {
@@ -248,7 +264,7 @@ const nextBtn = document.getElementById('nextBtn');
 function loadQuiz(){
   rEl.textContent = "";
   nextBtn.style.display = "none";
-  aEl.innerHTML = ""; // Limpiar respuestas anteriores
+  aEl.innerHTML = "";
   const q = quizData[current];
   qEl.textContent = q.question;
   q.answers.forEach((ans, i) => {
@@ -270,14 +286,12 @@ function checkAnswer(i, selectedBtn){
   rEl.textContent = i === correct ? "✅ Correcto" : "❌ Incorrecto";
   nextBtn.style.display = "inline-block";
 
-  // Desactivar todos los botones para que no cambie la respuesta
   const allBtns = aEl.querySelectorAll('button');
   allBtns.forEach(btn => {
     btn.disabled = true;
     btn.style.opacity = "0.6";
     btn.style.cursor = "not-allowed";
   });
-  // Resaltar la seleccionada
   selectedBtn.style.background = i === correct ? "#b10000" : "#ff4444";
   selectedBtn.style.color = "#fff";
 }
@@ -326,7 +340,7 @@ function lanzarConfeti(){
   let startTime = Date.now();
   function update(){
     const elapsed = Date.now() - startTime;
-    if(elapsed > 10000){ // 10 segundos
+    if(elapsed > 10000){
       ctx.clearRect(0,0,canvas.width,canvas.height);
       return;
     }
@@ -348,7 +362,5 @@ function lanzarConfeti(){
   update();
 }
 </script>
-<!-- CHATBOT AI INTEGRADO (Reemplaza YOUR_TIDIO_KEY con tu clave real de Tidio) -->
-<script src="//code.tidio.co/h0w9byj8cvozd9t4pcdctdp1aqlorguy.js" async></script>
 </body>
 </html>
