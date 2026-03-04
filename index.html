@@ -3,169 +3,309 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Secundaria Adolfo López Mateos</title>
-  <!-- ICONOSnnnnnnnnnnnnnn -->
+  <title>Secundaria Adolfo López Mateos - Campus Poncitlán</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
-    :root{
-      --rojo:#b10000;
-      --rojo-oscuro:#7a0000;
-      --blanco:#ffffff;
-      --glass:rgba(255,255,255,.18);
+    :root {
+      --rojo: #b10000;
+      --rojo-oscuro: #7a0000;
+      --blanco: #ffffff;
+      --glass: rgba(255,255,255,.18);
     }
-    *{ box-sizing:border-box; }
-    body{
-      margin:0;
-      font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto;
-      background:linear-gradient(180deg,var(--rojo),var(--rojo-oscuro));
-      color:var(--blanco);
-      -webkit-font-smoothing:antialiased;
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(180deg, var(--rojo), var(--rojo-oscuro));
+      color: var(--blanco);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
     }
-    header{
-      text-align:center;
-      padding:90px 20px;
+    header {
+      text-align: center;
+      padding: 140px 20px 80px;
     }
-    header img{ width:130px; margin-bottom:20px; }
-    header h1{ font-size:3.2rem; margin:0; text-transform:uppercase; }
-    header p{ font-size:1.25rem; opacity:.9; }
-    section{ padding:80px 20px; text-align:center; }
-    .card{
-      max-width:1100px;
-      margin:auto;
-      background:var(--glass);
-      backdrop-filter:blur(20px);
-      border-radius:30px;
-      padding:60px 30px;
-      box-shadow:0 25px 60px rgba(0,0,0,.35);
+    header img {
+      width: 180px;
+      margin-bottom: 35px;
     }
-    .divider{ width:90px; height:4px; background:var(--blanco); margin:30px auto; border-radius:5px; }
-    .socials{
-      display:flex; justify-content:center; flex-wrap:wrap; gap:30px; margin-top:35px;
+    header h1 {
+      font-size: 4rem;
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-weight: 900;
     }
-    .socials a{
-      color:var(--blanco);
-      font-size:1.4rem;
-      text-decoration:none;
-      padding:16px 26px;
-      border-radius:60px;
-      background:rgba(255,255,255,.15);
-      backdrop-filter:blur(10px);
-      transition:.35s cubic-bezier(.4,0,.2,1);
+    header p {
+      font-size: 1.6rem;
+      opacity: 0.92;
+      margin-top: 20px;
     }
-    .socials a:hover{ transform:translateY(-6px) scale(1.05); background:var(--blanco); color:var(--rojo); }
-    .ispeak{
-      background:var(--blanco);
-      color:var(--rojo);
-      border-radius:40px 40px 0 0;
+    section {
+      padding: 100px 20px;
+      text-align: center;
     }
-    .ispeak img{ width:150px; margin-bottom:25px; }
-    .ispeak h2{ font-size:2.8rem; }
-    .ispeak p{ max-width:850px; margin:auto; font-size:1.15rem; line-height:1.8; }
-    footer{ background:#5c0000; text-align:center; padding:30px; font-size:.95rem; }
-    /* Animaciones estilo Apple */
-    .fade{ opacity:0; transform:translateY(60px) scale(.96); transition:all 1s cubic-bezier(.4,0,.2,1); }
-    .fade.show{ opacity:1; transform:translateY(0) scale(1); }
-    @media(max-width:700px){
-      header h1{ font-size:2.3rem; }
-      .ispeak h2{ font-size:2.1rem; }
-      section{ padding:60px 15px; }
-      .card{ padding:40px 20px; }
-      iframe{ width:100%; height:300px; }
+    .card {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: var(--glass);
+      backdrop-filter: blur(25px);
+      border-radius: 35px;
+      padding: 80px 50px;
+      box-shadow: 0 35px 80px rgba(0,0,0,.5);
+    }
+    .divider {
+      width: 120px;
+      height: 6px;
+      background: var(--blanco);
+      margin: 40px auto;
+      border-radius: 6px;
+    }
+    .socials {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 35px;
+      margin-top: 50px;
+    }
+    .socials a {
+      color: var(--blanco);
+      font-size: 1.8rem;
+      text-decoration: none;
+      padding: 20px 35px;
+      border-radius: 70px;
+      background: rgba(255,255,255,.18);
+      backdrop-filter: blur(14px);
+      transition: all .45s cubic-bezier(.4,0,.2,1);
+    }
+    .socials a:hover {
+      transform: translateY(-12px) scale(1.12);
+      background: var(--blanco);
+      color: var(--rojo);
+    }
+    /* iSpeak COOL & MODERNO */
+    .ispeak-section {
+      background: linear-gradient(135deg, #ffffff, #f8f9fa);
+      color: #222;
+      position: relative;
+      overflow: hidden;
+    }
+    .ispeak-section::before {
+      content: '';
+      position: absolute;
+      top: -80px;
+      left: -80px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(177,0,0,0.12), transparent);
+      animation: pulse 6s infinite;
+    }
+    .ispeak-section::after {
+      content: '';
+      position: absolute;
+      bottom: -80px;
+      right: -80px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(177,0,0,0.12), transparent);
+      animation: pulse 6s infinite reverse;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.4; }
+      50% { transform: scale(1.3); opacity: 0.7; }
+    }
+    .ispeak-section .card {
+      background: white;
+      color: #333;
+      box-shadow: 0 25px 70px rgba(177,0,0,0.18);
+      border: 1px solid rgba(177,0,0,0.08);
+    }
+    .ispeak-section h2 {
+      color: var(--rojo);
+      font-size: 3.5rem;
+      margin-bottom: 10px;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+    .ispeak-section .subtitle {
+      font-size: 1.6rem;
+      color: var(--rojo);
+      font-weight: 700;
+      margin-bottom: 35px;
+    }
+    .ispeak-section img.logo {
+      width: 220px;
+      margin-bottom: 40px;
+      transition: transform 0.5s ease;
+    }
+    .ispeak-section img.logo:hover {
+      transform: scale(1.1) rotate(4deg);
+    }
+    .ispeak-section p.main {
+      font-size: 1.3rem;
+      max-width: 860px;
+      margin: 0 auto 40px;
+      color: #444;
+      font-weight: 500;
+    }
+    .ispeak-section ul {
+      list-style: none;
+      max-width: 840px;
+      margin: 0 auto 50px;
+      text-align: left;
+    }
+    .ispeak-section ul li {
+      font-size: 1.25rem;
+      margin: 20px 0;
+      position: relative;
+      padding-left: 50px;
+      color: #333;
+      transition: transform 0.4s, color 0.4s;
+    }
+    .ispeak-section ul li:hover {
+      transform: translateX(10px);
+      color: var(--rojo);
+    }
+    .ispeak-section ul li::before {
+      content: '\f058';
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      color: var(--rojo);
+      position: absolute;
+      left: 0;
+      font-size: 1.8rem;
+      top: -4px;
+      transition: transform 0.4s;
+    }
+    .ispeak-section ul li:hover::before {
+      transform: scale(1.4) rotate(15deg);
+    }
+    .ispeak-section .contact-btn {
+      display: inline-block;
+      background: var(--rojo);
+      color: white;
+      padding: 18px 50px;
+      border-radius: 60px;
+      font-size: 1.3rem;
+      font-weight: 700;
+      text-decoration: none;
+      margin: 30px 0;
+      box-shadow: 0 10px 30px rgba(177,0,0,0.35);
+      transition: all 0.4s;
+    }
+    .ispeak-section .contact-btn:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px rgba(177,0,0,0.45);
+      background: #d10000;
+    }
+    .ispeak-section img.alumnos {
+      max-width: 820px;
+      width: 100%;
+      border-radius: 30px;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+      margin: 60px auto 0;
+      display: block;
+      transition: transform 0.6s ease, box-shadow 0.6s ease;
+    }
+    .ispeak-section img.alumnos:hover {
+      transform: scale(1.04);
+      box-shadow: 0 35px 80px rgba(0,0,0,0.4);
+    }
+    footer {
+      background: #5c0000;
+      text-align: center;
+      padding: 60px 20px;
+      font-size: 1.2rem;
+      margin-top: 80px;
+    }
+    .fade {
+      opacity: 0;
+      transform: translateY(90px) scale(0.93);
+      transition: all 1.4s cubic-bezier(.4,0,.2,1);
+    }
+    .fade.show {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    @media (max-width: 768px) {
+      header h1 { font-size: 3rem; }
+      .ispeak-section h2 { font-size: 2.8rem; }
+      .ispeak-section ul li { font-size: 1.15rem; padding-left: 45px; }
+      .ispeak-section img.logo { width: 180px; }
+      .ispeak-section img.alumnos { margin-top: 40px; }
     }
   </style>
 </head>
 <body>
+
 <header class="fade">
-  <img src="logo-secundaria.jpg" alt="Logo Secundaria" />
+  <img src="logo-secundaria.jpg" alt="Logo Secundaria Adolfo López Mateos Campus Poncitlán">
   <h1>Secundaria Adolfo López Mateos</h1>
-  <p>Formando estudiantes con valores, conocimiento y futuro</p>
+  <p>Líderes en Educación Formando líderes del futuro</p>
 </header>
+
 <section class="fade">
   <div class="card">
     <h2>Sobre Nosotros</h2>
     <div class="divider"></div>
-    <p>Somos una institución privada comprometida con la excelencia académica, la innovación y la formación integral.</p>
+    <p>El Centro Educativo Universitario (CEU) Adolfo López Mateos Campus Poncitlán, conocido como "La Adolfo", es una secundaria privada ubicada en Poncitlán, Jalisco. Nos dedicamos a la formación integral de estudiantes con énfasis en liderazgo, valores, educación bilingüe (a través del programa iSpeak) y actividades extracurriculares como deportes, desfiles, eventos culturales y desarrollo personal. Somos una institución comprometida con la excelencia académica y la formación de jóvenes líderes para el futuro.</p>
+    <p style="margin-top: 30px; font-size: 1.2rem; opacity: 0.9;">
+      Dirección: Priv. Lázaro Cárdenas No. 4, Col. Patria, Poncitlán, Jalisco, México (C.P. 45950)<br>
+      Teléfono: +52 33 2254 9618<br>
+      Email: adolfocampusponcitlan@gmail.com
+    </p>
     <div class="socials">
       <a href="https://www.instagram.com/almponcitlan/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
       <a href="https://www.facebook.com/almponcitlan" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
       <a href="https://www.tiktok.com/@adolfo_poncitlan" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
     </div>
-    <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:50px;margin-top:50px">
-      <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@adolfo_poncitlan/video/7445729188515958022" data-video-id="7445729188515958022" style="max-width:325px;min-width:280px;">
-  <section>
-    <a target="_blank" href="https://www.tiktok.com/@adolfo_poncitlan">@adolfo_poncitlan</a>
-  </section>
-</blockquote>
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DSOKiuxieRz/" data-instgrm-version="14"></blockquote>
-    </div>
   </div>
 </section>
-<section class="ispeak fade">
-  <img src="logo-ispeak.jpg" alt="Logo iSpeak" />
-  <h2>iSpeak English School</h2>
-  <div class="divider" style="background:#b10000"></div>
-  <p>Welcome to <strong>iSpeak</strong>, where students learn English in a modern, dynamic and fun way.</p>
-  <div class="socials">
-    <a href="https://www.instagram.com/ispeak_alm/" target="_blank" style="border-color:#b10000;color:#b10000">
-      <i class="fab fa-instagram"></i> iSpeak Instagram
+
+<section class="ispeak-section fade">
+  <div class="card">
+    <img src="logo-ispeak.jpg" alt="Logo iSpeak Escuela de Inglés" class="logo">
+    <h2>iSpeak Escuela de Inglés</h2>
+    <p class="subtitle">Speak fast, learn easy ⚡️</p>
+    <p class="main">Programa de inglés 100% conversacional incorporado al CEU Adolfo López Mateos en Poncitlán, Jalisco. Aprende a hablar inglés de forma natural y divertida, como aprendiste tu idioma materno. Ideal para niños y jóvenes que quieren ser bilingües en un mundo globalizado. ¡Súmate al club de los bilingües!</p>
+    <ul>
+      <li>100% conversacional: ¡Habla desde el primer día!</li>
+      <li>Especial para #Kids y jóvenes</li>
+      <li>Método rápido, motivador y efectivo</li>
+      <li>Docentes con experiencia internacional</li>
+      <li>Integrado a tu educación en La Adolfo</li>
+      <li>¡Disfruta aprender inglés! #YoSoyiSpeak #PoweredByALM</li>
+    </ul>
+    <a href="https://wa.me/5213921210205" target="_blank" class="contact-btn">
+      <i class="fab fa-whatsapp"></i> ¡Contáctanos por WhatsApp!
     </a>
-  </div>
-  <div style="max-width:360px;margin:40px auto">
-    <iframe
-      src="https://www.instagram.com/p/CwlxZCbMZyN/embed"
-      width="100%"
-      height="480"
-      frameborder="0"
-      scrolling="no"
-      allowtransparency="true">
-    </iframe>
-  </div>
-  <div style="max-width:600px;margin:40px auto">
-    <img src="alumnos-ispeak.png" alt="Alumnos iSpeak" style="width:100%;height:auto;border-radius:20px;box-shadow:0 10px 25px rgba(0,0,0,.3)">
+    <div class="socials">
+      <a href="https://www.instagram.com/ispeak_alm/" target="_blank" style="color:var(--rojo); border:2px solid var(--rojo);">
+        <i class="fab fa-instagram"></i> Síguenos en Instagram
+      </a>
+    </div>
+    <img src="alumnos-ispeak.png" alt="Alumnos felices aprendiendo inglés en iSpeak" class="alumnos">
   </div>
 </section>
-<!-- QUIZ INTERACTIVO -->
-<section class="fade" id="quiz">
-  <h2>🎓 Quiz ALM & iSpeak</h2>
-  <div class="divider"></div>
-  <div id="quiz-box" style="max-width:600px;margin:40px auto;background:#ffffff;color:#b10000;padding:30px;border-radius:20px;box-shadow:0 10px 25px rgba(0,0,0,.3)">
-    <input id="nombre" type="text" placeholder="Ingresa tu nombre para el certificado" style="padding:10px; border-radius:10px; border:1px solid #b10000; margin-bottom:20px; width:100%; font-size:1rem;">
-    <h3 id="question"></h3>
-    <div id="answers" style="margin-top:20px;display:grid;gap:15px"></div>
-    <p id="result" style="margin-top:20px;font-weight:bold"></p>
-    <button id="nextBtn" style="display:none;margin-top:20px;padding:12px 25px;border:none;border-radius:30px;background:#b10000;color:#fff;font-size:1rem;cursor:pointer">Siguiente</button>
-  </div>
-</section>
-<!-- CERTIFICADO -->
-<section id="certificado" class="fade" style="display:none;background:#fff;color:#b10000;text-align:center;padding:60px 20px">
-  <h2 style="font-size:2.5rem">🎉 ¡Certificado obtenido! 🎉</h2>
-  <p style="font-size:1.2rem">Este certificado reconoce a <span id="nombreAlumno">el participante</span> que has completado con éxito el</p>
-  <h3 style="margin:20px 0">Quiz ALM & iSpeak</h3>
-  <div style="border:4px solid #b10000;border-radius:20px;max-width:600px;margin:30px auto;padding:30px">
-    <p><strong>Otorgado por:</strong></p>
-    <p>Secundaria Adolfo López Mateos</p>
-    <p>iSpeak English School</p>
-    <p style="margin-top:20px">Fecha: <span id="fechaCert"></span></p>
-  </div>
-</section>
-<canvas id="confetti" style="position:fixed;top:0;left:0;pointer-events:none;z-index:9999"></canvas>
-<!-- SECCIÓN DE CONTACTO -->
+
 <section class="fade">
   <div class="card">
     <h2>Contacto</h2>
     <div class="divider"></div>
-    <p>¡Estamos listos para responder tus dudas! Contáctanos por WhatsApp o visítanos.</p>
-    <div class="socials">
-      <a href="https://wa.me/5213322549618" target="_blank"><i class="fab fa-whatsapp"></i> +52 33 2254 9618</a>
+    <p>¡Estamos listos para resolver todas tus dudas e inscripciones!</p>
+    <div class="socials" style="margin: 60px 0;">
+      <a href="https://wa.me/5213322549618" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp +52 33 2254 9618</a>
     </div>
-    <h3>Ubicación</h3>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1416!2d-102.9431148!3d20.3821331!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842f25a5fcf79b55%3A0xdcff44a0d9eb0bbe!2sEl%20Cerrito%2C%2045959%20Poncitl%C3%A1n%2C%20Jal.!5e0!3m2!1ses!2smx!4v1701199999999" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <h3 style="margin: 60px 0 30px; font-size: 2rem;">Ubicación</h3>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.5!2d-102.9431148!3d20.3821331!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842f25a5fcf79b55%3A0xdcff44a0d9eb0bbe!2sEl%20Cerrito%2C%2045959%20Poncitl%C3%A1n%2C%20Jal.!5e0!3m2!1ses!2smx!4v1730000000000" width="100%" height="500" style="border:0; border-radius:28px;" allowfullscreen="" loading="lazy"></iframe>
   </div>
 </section>
-<footer>© 2025 Secundaria Adolfo López Mateos · Poncitlán, Jalisco</footer>
 
-<!-- CHATBOT TAWK.TO INTEGRADO -->
-<!--Start of Tawk.to Script-->
+<footer>
+  © 2026 Secundaria Adolfo López Mateos Campus Poncitlán · Poncitlán, Jalisco<br>
+  Líderes en Educación Formando líderes del futuro
+</footer>
+
+<!-- CHATBOT TAWK.TO (el que ya te funcionaba) -->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
@@ -177,190 +317,21 @@ s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
-<!--End of Tawk.to Script-->
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const items = document.querySelectorAll('.fade');
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        if(entry.isIntersecting){
+        if (entry.isIntersecting) {
           entry.target.classList.add('show');
           observer.unobserve(entry.target);
         }
       });
-    },{threshold:0.25});
+    }, { threshold: 0.25 });
     items.forEach(el => observer.observe(el));
   });
 </script>
-<script async src="https://www.tiktok.com/embed.js"></script>
-<script src="https://www.instagram.com/embed.js"></script>
-<script>
-  window.addEventListener('load',()=>{
-    if(window.instgrm){ instgrm.Embeds.process(); }
-  });
-</script>
-<script>
-const quizData = [
-  {
-    question: "¿En qué año fue fundada la escuela?",
-    answers: ["1965", "1969", "1975"],
-    correct: 1
-  },
-  {
-    question: "¿Quiénes son los fundadores de la institución?",
-    answers: ["Mtro. Jaime Rivera Varela y Maestra Ofelia Zárate Casián", "Eva Sámano de López Mateos", "Lic. Carlos Rivera Aceves"],
-    correct: 0
-  },
-  {
-    question: "¿Qué día exacto nació la escuela Adolfo López Mateos?",
-    answers: ["20 de enero", "27 de octubre", "13 de marzo"],
-    correct: 1
-  },
-  {
-    question: "¿Cuáles son los colores institucionales?",
-    answers: ["Azul y blanco", "Rojo y blanco", "Rojo y negro"],
-    correct: 1
-  },
-  {
-    question: "¿Cuántas veces ha ganado la escolta en competencias?",
-    answers: ["3 veces", "5 veces", "Más de 7 veces"],
-    correct: 1
-  },
-  {
-    question: "¿En cuántas ocasiones han sido campeones de fútbol?",
-    answers: ["Menos de 5", "Entre 5 y 10", "Más de 10"],
-    correct: 2
-  },
-  {
-    question: "¿Cuál es uno de los pilares educativos de la escuela?",
-    answers: ["Solo deporte", "Ciencia, disciplina, deporte y valores", "Solo inglés"],
-    correct: 1
-  },
-  {
-    question: "¿Qué celebridades relacionadas con el deporte han visitado la escuela?",
-    answers: ["Hugo Sánchez y Samantha Bricio", "Bad Bunny", "Ninguna"],
-    correct: 0
-  },
-  {
-    question: "¿En qué año se integró el nivel secundaria a la institución?",
-    answers: ["1969", "1975", "1990"],
-    correct: 1
-  },
-  {
-    question: "¿En qué colonia se ubica actualmente?",
-    answers: ["Centro de Poncitlán", "El Cerrito", "Ocotlán"],
-    correct: 1
-  }
-];
 
-let current = 0;
-let animationFrame;
-const qEl = document.getElementById('question');
-const aEl = document.getElementById('answers');
-const rEl = document.getElementById('result');
-const nextBtn = document.getElementById('nextBtn');
-
-function loadQuiz(){
-  rEl.textContent = "";
-  nextBtn.style.display = "none";
-  aEl.innerHTML = "";
-  const q = quizData[current];
-  qEl.textContent = q.question;
-  q.answers.forEach((ans, i) => {
-    const btn = document.createElement('button');
-    btn.textContent = ans;
-    btn.style.padding = "12px";
-    btn.style.borderRadius = "25px";
-    btn.style.border = "2px solid #b10000";
-    btn.style.background = "transparent";
-    btn.style.cursor = "pointer";
-    btn.style.width = "100%";
-    btn.onclick = () => checkAnswer(i, btn);
-    aEl.appendChild(btn);
-  });
-}
-
-function checkAnswer(i, selectedBtn){
-  const correct = quizData[current].correct;
-  rEl.textContent = i === correct ? "✅ Correcto" : "❌ Incorrecto";
-  nextBtn.style.display = "inline-block";
-
-  const allBtns = aEl.querySelectorAll('button');
-  allBtns.forEach(btn => {
-    btn.disabled = true;
-    btn.style.opacity = "0.6";
-    btn.style.cursor = "not-allowed";
-  });
-  selectedBtn.style.background = i === correct ? "#b10000" : "#ff4444";
-  selectedBtn.style.color = "#fff";
-}
-
-nextBtn.onclick = () => {
-  current++;
-  if(current < quizData.length){
-    loadQuiz();
-  } else {
-    qEl.textContent = "🎉 ¡Quiz completado!";
-    aEl.innerHTML = "Gracias por participar";
-    rEl.textContent = "";
-    nextBtn.style.display = "none";
-    mostrarCertificado();
-  }
-}
-
-loadQuiz();
-
-function mostrarCertificado(){
-  document.getElementById('nombreAlumno').textContent = document.getElementById('nombre').value || "el participante";
-  document.getElementById('certificado').style.display = 'block';
-  document.getElementById('fechaCert').textContent = new Date().toLocaleDateString();
-  lanzarConfeti();
-}
-
-function lanzarConfeti(){
-  const canvas = document.getElementById('confetti');
-  const ctx = canvas.getContext('2d');
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-
-  const pieces = [];
-  for(let i = 0; i < 200; i++){
-    pieces.push({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height - canvas.height,
-      r: Math.random() * 6 + 4,
-      dy: Math.random() * 4 + 3,
-      color: Math.random() > 0.5 ? '#b10000' : '#ffffff',
-      angle: Math.random() * Math.PI * 2,
-      spin: Math.random() * 0.2 - 0.1
-    });
-  }
-
-  let startTime = Date.now();
-  function update(){
-    const elapsed = Date.now() - startTime;
-    if(elapsed > 10000){
-      ctx.clearRect(0,0,canvas.width,canvas.height);
-      return;
-    }
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-    pieces.forEach(p => {
-      ctx.save();
-      ctx.translate(p.x, p.y);
-      ctx.rotate(p.angle);
-      ctx.fillStyle = p.color;
-      ctx.fillRect(-p.r/2, -p.r/2, p.r, p.r*2);
-      ctx.restore();
-
-      p.y += p.dy;
-      p.x += Math.sin(elapsed / 200 + p.angle) * 2;
-      p.angle += p.spin;
-    });
-    animationFrame = requestAnimationFrame(update);
-  }
-  update();
-}
-</script>
 </body>
 </html>
